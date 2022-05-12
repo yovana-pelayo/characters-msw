@@ -10,6 +10,8 @@ export default function TypeDrop({ onChange }) {
       <option value="NA">NA</option>
       <option value="fairy">Fairy</option>
       <option value="flying">Flying</option>
+      <option value="steel">Steel</option>
+      <option value="ground">Ground</option>
     </select>
   );
 }

@@ -35,15 +35,15 @@ export default function CharacterList() {
   //   }
   //   getPokeType();
   // }, []);
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <div>loading</div>;
   return (
     <>
+      <h1>Filter Pokemon by Type</h1>
       <TypeDrop onChange={filterByType} />
       {(filterTypes.length ? filterTypes : characters).map((character) => (
         <div key={character._id}>
-          <p> Poke Type: {character.type_2}</p>
           <p>Name: {character.pokemon}</p>
-          <img src={character.url_image} height="100px" />
+          <img src={character.url_image} height="100px" alt="image" />
         </div>
       ))}
     </>
