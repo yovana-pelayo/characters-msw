@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import App from './App';
+import userEvent from '@testing-library/user-event';
 
 describe('App', () => {
   it('should navigate between list and view', async () => {
@@ -16,7 +17,14 @@ describe('App', () => {
 
     const name = await screen.findByText('Name: pikachu');
     expect(name).toBeInTheDocument();
-    // const image = screen.getByAltText('image');
-    // expect(image).toHaveAttribute();
+
+    const pikachuImage = screen.queryByAltText('pikachu');
+    expect(pikachuImage).toBeInTheDocument();
+
+    userEvent.selectOptions(
+      await screen.findByRole('combobox'),
+      await screen.findByRole('option', { name: 'Flying' })
+    );
+    expect(screen.getByRole('option', { name: 'Flying' }).selected).toBe(true);
   });
 });

@@ -43,7 +43,11 @@ export default function CharacterList() {
       {(filterTypes.length ? filterTypes : characters).map((character) => (
         <div key={character._id}>
           <p>Name: {character.pokemon}</p>
-          <img src={character.url_image} height="100px" alt="image" />
+          <img
+            src={character.url_image}
+            height="100px"
+            alt={character.pokemon}
+          />
         </div>
       ))}
     </>
