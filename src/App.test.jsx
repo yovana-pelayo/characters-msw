@@ -28,3 +28,5 @@ describe('App', () => {
     expect(screen.getByRole('option', { name: 'Flying' }).selected).toBe(true);
   });
 });
+
+// select is behavioral
