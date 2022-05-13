@@ -26,6 +26,13 @@ describe('App', () => {
       await screen.findByRole('option', { name: 'Flying' })
     );
     expect(screen.getByRole('option', { name: 'Flying' }).selected).toBe(true);
+
+    const butterfree = await screen.findByText('Name: butterfree');
+    expect(butterfree).toBeInTheDocument();
+
+    const mega = screen.queryByText('Name: venusaur-mega');
+    expect(mega).not.toBeInTheDocument();
+    screen.debug();
   });
 });
 
